@@ -1,0 +1,121 @@
+﻿@{
+    ViewData["Title"] = "Belajar CSS";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/css/Belajar.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/c2f4fc3a88.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="top container text-center mt-3 mb-4">
+        <h1 class="display-4">Belajar Frontend</h1>
+    </div>
+
+    <div id="a" class="middle container-fluid">
+        <div class="row">
+            <div class="col">
+                Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+            </div>
+            <div class="col">
+                Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+            </div>
+            <div class="col">
+                Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+            </div>
+        </div>
+    </div>
+
+    <div class="middle2 container">
+
+        <div class="row mb-4 mt-4 text-center">
+            <div class="col-lg-3 col-sm-6 mb-3">
+                <button type="button" class="btn btn-primary btn-lg">Change Text</button>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-3">
+                <button type="button" class="btn btn-secondary btn-lg">Change Color</button>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-3">
+                <button type="button" class="btn btn-success btn-lg">Change List Color</button>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-3">
+                <button type="button" class="btn btn-danger btn-lg">Alert</button>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-3">
+                <button type="button" class="btn btn-warning btn-lg">Hover Test</button>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-3">
+                <button type="button" class="btn btn-dark btn-lg">Toggle Invisibility</button>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-3">
+                <button type="button" class="btn btn-outline-danger btn-lg">Toggle Size color</button>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-3">
+                <button type="button" class="btn btn-outline-dark btn-lg">Refresh</button>
+            </div>
+        </div>
+
+    </div>
+
+    <table id="SWtable" class="table table-hover">
+        <thead class="table-success head-table text-center">
+            <tr>
+                <td> No </td>
+                <td> Name </td>
+                <td> Action </td>
+            </tr>
+        </thead>
+    </table>
+
+    <button type="button" class="btn btn-outline-dark dark-btn"> <i class="far fa-moon"> Light Mode </i>  </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content modal-lg">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> test </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body text-center">
+                    <div class="row">
+
+                        <div class="col-lg-6">
+                            <img class="poke-pic mt-3" src="" alt="" />
+                        </div>
+
+                        <div class="col-lg-6">
+                            <table class="table poke-ident text-left borderless">
+                            </table>
+
+                            <div >
+                                <h5 class="poke-types">
+                                </h5>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    @*<button type="button" class="btn btn-primary">Save changes</button>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+@section Scripts
+    {
+    <script src="~/js/LatihanJS.js"></script>
+}

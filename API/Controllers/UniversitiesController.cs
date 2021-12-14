@@ -34,5 +34,16 @@ namespace API.Controllers
             }
                 return NotFound(new { status = HttpStatusCode.NotFound, Message = "Data belum tersedia" });
         }
+
+        [HttpGet("CountUniv")]
+        public ActionResult Counting()
+        {
+            var hitung = universityRepository.GetCountUniv();
+            if (hitung != null)
+            {
+                return Ok(new { status = HttpStatusCode.OK, result = hitung, message = "Data Ditemukan" });
+            }
+            return NotFound(new { status = HttpStatusCode.NotFound, result = hitung, message = "Data tak ditemukan" });
+        }
     }
 }

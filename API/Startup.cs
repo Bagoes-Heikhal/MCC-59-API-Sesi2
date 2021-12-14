@@ -29,6 +29,7 @@ namespace API
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
         }
 
         public IConfiguration Configuration { get; }
@@ -82,7 +83,16 @@ namespace API
 
             services.AddCors(c =>
             {
+                c.AddDefaultPolicy(
+                builder =>
+                {
+                    builder.WithOrigins("https://localhost:44339")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowCredentials();
+                });
                 c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+    
             });
 
         }
@@ -113,7 +123,7 @@ namespace API
                     await context.Response.WriteAsync("Anda tidak memiliki akses");
                 }
             });
-
+            app.UseCors();
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseCors(options => options.AllowAnyOrigin());

@@ -1,0 +1,26 @@
+﻿.buttonHide {
+    display: none;
+    background-color: red;
+}
+
+.is-invalid {
+    color: red; /* red */
+}
+
+#wrapper {
+    background-color: red;
+}
+/*.my-valid-class {
+    color: #00CC00;*/ /* green */
+/*}*/
+.bootstrap-select li:first-child {
+    display: none;
+}
+
+.btn-insert{
+    margin-bottom:20px;
+}
+
+#chart {
+    max-width: 650px;
+}

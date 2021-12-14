@@ -33,17 +33,22 @@ namespace API.Repository
                             join b in context.Accounts on a.NIK equals b.NIK
                             select new { Account = b, Employee = a}).FirstOrDefault();
 
-            if (dataPass.Employee.Email != null || dataPass.Employee.Phone != null)
+            if (dataPass == null)
+            {
+                return 4;
+            }
+            else if (dataPass.Employee.Email != null || dataPass.Employee.Phone != null)
             {
                 var NIK = dataPass.Account.NIK;
                 var cekPassword = Hashing.ValidatePassword(loginVM.Password, dataPass.Account.Password);
                 if (cekPassword == true)
                 {
-                    return 1 ;
+                    return 1;
                 }
                 return 2;
             }
             return 3;
+            
         }
 
         public IEnumerable<ProfileVM> Profile(LoginVM loginVM)

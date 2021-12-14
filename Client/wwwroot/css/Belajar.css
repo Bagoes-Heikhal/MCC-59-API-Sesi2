@@ -1,0 +1,58 @@
+﻿.invisible{
+    visibility: hidden;
+}
+
+.huge{
+    font-size: 5rem;
+    color: darkgrey;
+    font-weight: bold;
+}
+
+.dark-btn {
+    margin-top: 1%;
+    margin-bottom: 6%;
+}
+
+.head-table{
+    font-weight: bold;
+}
+
+.poke-pic{
+    width: 50%;
+    margin-bottom: 35px;
+}
+
+.poison-bad{
+    color: white;
+    background-color: mediumpurple;
+}
+
+.bug-bad{
+    color: white;
+    background-color: forestgreen;
+}
+
+.badge {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.modal-title, .poke-ident, .poke-types, #listSW {
+    text-transform: capitalize;
+}
+
+.poke {
+    border : 100px;
+}
+
+.poke-ident {
+    border: 0;
+}
+
+.borderless td, .borderless th {
+    border: none;
+}
+
+th, td {
+    text-align: center;
+}

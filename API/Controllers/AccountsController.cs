@@ -71,7 +71,8 @@ namespace API.Controllers
                     var idtoken = new JwtSecurityTokenHandler().WriteToken(token);
                     claims.Add(new Claim("TokenSecurity", idtoken.ToString()));
 
-                    return Ok(new { Status = HttpStatusCode.OK, Token = idtoken, Profile = accountRepository.Profile(loginVM), Message = $"Login Berhasil" });
+                    return Ok(new JWTokenVM { Token = idtoken, Messages = "Login Sucsses" });
+                    //return Ok(new { Status = HttpStatusCode.OK, Token = idtoken, Profile = accountRepository.Profile(loginVM), Message = $"Login Berhasil" });
                 case 2:
                     return BadRequest(new { Status = HttpStatusCode.BadRequest, Message = $"Password salah" });
                 case 3:

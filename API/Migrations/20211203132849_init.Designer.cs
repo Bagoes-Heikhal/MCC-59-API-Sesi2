@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20211124064606_Add-Role-Table4")]
-    partial class AddRoleTable4
+    [Migration("20211203132849_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -54,7 +54,7 @@ namespace API.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("tb_ts_Account_Role");
+                    b.ToTable("tb_t_Account_Role");
                 });
 
             modelBuilder.Entity("API.Models.Education", b =>
@@ -125,7 +125,7 @@ namespace API.Migrations
 
                     b.HasIndex("EducationId");
 
-                    b.ToTable("tb_ts_Profiling");
+                    b.ToTable("tb_t_Profiling");
                 });
 
             modelBuilder.Entity("API.Models.Role", b =>

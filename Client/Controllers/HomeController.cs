@@ -23,7 +23,27 @@ namespace Client.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Privacy()  
+        {
+            return View();
+        }
+
+        [HttpGet("Notfound/")]
+        public IActionResult Page_404()
+        {
+            return View();
+        }
+
+
+        [HttpGet("Forbidden/")]
+        public IActionResult Page_403()
+        {
+            return View();
+        }
+
+
+        [HttpGet("Unauthorized/")]
+        public IActionResult Page_401()
         {
             return View();
         }

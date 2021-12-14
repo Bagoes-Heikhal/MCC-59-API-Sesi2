@@ -1,8 +1,4 @@
 ﻿
-@{
-    Layout = null;
-}
-
 <!DOCTYPE html>
 
 <html>
@@ -10,25 +6,27 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <link href="/css/Styles.css" rel="stylesheet" />
 
 </head>
 <body>
     <h2>HTML Forms</h2>
-
     <form action="/action_page.php">
         <label for="fname">First name:</label><br>
-        <input type="text" id="fname" name="fname" value="John"><br>
+        <input type="text" id="fname" name="fname" value="Johnnnnsada"><br>
         <label for="lname">Last name:</label><br>
-        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+        <input type="text" id="lname" name="lname" value="Doeeseses"><br><br>
         <input type="submit" value="Submit">
     </form>
 
+    <h1>Test 123</h1>
 </body>
 </html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <script>
     $.ajax({
-        url: "https://localhost:44345/API/Universities/CountEmployeeUniversity",
+        url: "https://localhost:44345/API/Employees",
         success: function (result) {
             console.log(result);
         }

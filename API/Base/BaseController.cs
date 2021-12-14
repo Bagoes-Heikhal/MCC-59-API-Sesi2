@@ -26,7 +26,9 @@ namespace API.Base
             var result = repository.Get();
             if (result.Count() != 0)
             {
-                return Ok(new { status = HttpStatusCode.OK, result = result, Message = "Data ditampilkan" });
+                //return Ok(new { status = HttpStatusCode.OK, result = result, Message = "Data ditampilkan" });
+                return Ok(result);
+
             }
             return NotFound(new { status = HttpStatusCode.NotFound, Message = $"Data belum tersedia" });
         }
@@ -37,12 +39,12 @@ namespace API.Base
             var result = repository.Get(key);
             if(result != null)
             {
-                return Ok(new { status = HttpStatusCode.OK, result = result, Message = "Data ditemukan" });
+                return Ok(result);
             }
             return NotFound(new { status = HttpStatusCode.NotFound, Message = $"Data tidak ditemukan 11" });
         }
 
-        [HttpDelete]
+        [HttpDelete("{Key}")]
         public ActionResult Delete(Key key)
         {
             var result = repository.Delete(key);
@@ -56,19 +58,19 @@ namespace API.Base
             }
         }
 
-        [HttpPut]
-        public ActionResult Update(Entity entity, Key key)
-        {
-            var result = repository.Update(entity, key);
-            try
+            [HttpPut]
+            public ActionResult Update(Entity entity, Key key)
             {
-                return Ok(new { status = HttpStatusCode.OK, result = result, Message = "Data terupdate" });
+                var result = repository.Update(entity, key);
+                try
+                {
+                    return Ok(new { status = HttpStatusCode.OK, result = result, Message = "Data terupdate" });
+                }
+                catch (Exception)
+                {
+                    return BadRequest(new { status = HttpStatusCode.BadRequest, Message = "Gagal update" });
+                }
             }
-            catch (Exception)
-            {
-                return BadRequest(new { status = HttpStatusCode.BadRequest, Message = "Gagal update" });
-            }
-        }
 
         [HttpPost]
         public ActionResult Post(Entity entity)

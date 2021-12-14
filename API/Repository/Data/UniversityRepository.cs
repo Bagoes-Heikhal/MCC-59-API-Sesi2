@@ -39,5 +39,20 @@ namespace API.Repository
             
             return new KeyValuePair<List<string>, List<int>>(univName, univStudent);
         }
+
+
+        public IEnumerable GetCountUniv()
+        {
+            var univ = (from p in context.Profilings
+                        join ed in context.Educations on p.EducationId equals ed.EducationId
+                        join u in context.Universities on ed.UniversityId equals u.UniversityId
+                        group u by u.Name into cnt
+                        select new
+                        {
+                            UniversityName = cnt.Key,
+                            CountStudent = cnt.Count()
+                        }).AsEnumerable();
+            return univ.ToList();
+        }
     }
 }

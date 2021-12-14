@@ -37,7 +37,7 @@ namespace API.Controllers
             switch (result)
             {
                 case 1:
-                    return Ok(new { status = HttpStatusCode.OK, result = result, Message = "Data telah berhasil di buat" });
+                    return Ok(result);
                 case 2:
                     return BadRequest(new { status = HttpStatusCode.BadRequest, Message = "NIK telah digunakan" });
                 case 3:
@@ -48,21 +48,32 @@ namespace API.Controllers
                     return BadRequest(new { status = HttpStatusCode.BadRequest, Message = "Universitas tidak terdaftar" });
                 default:
                     return BadRequest(new { status = HttpStatusCode.BadRequest, Message = $"Gagal memasukan data " });
+                //case 1:
+                //    return Ok(new { status = HttpStatusCode.OK, result = result, Message = "Data telah berhasil di buat" });
+                //case 2:
+                //    return BadRequest(new { status = HttpStatusCode.BadRequest, Message = "NIK telah digunakan" });
+                //case 3:
+                //    return BadRequest(new { status = HttpStatusCode.BadRequest, Message = "Email telah digunakan" });
+                //case 4:
+                //    return BadRequest(new { status = HttpStatusCode.BadRequest, Message = "Nomer handpone telah digunakan" });
+                //case 5:
+                //    return BadRequest(new { status = HttpStatusCode.BadRequest, Message = "Universitas tidak terdaftar" });
+                //default:
+                //    return BadRequest(new { status = HttpStatusCode.BadRequest, Message = $"Gagal memasukan data " });
             };
         }
 
-        [Authorize(Roles = "Director, Manager")]
+        //[Authorize(Roles = "Director, Manager")]
         [HttpGet("RegisteredData")]
         public ActionResult GetRegister()
         {
             var result = employeeRepository.GetRegistered();
            
-
             if (result.Count() != 0)
             {
-                return Ok(new { status = HttpStatusCode.OK, result = result, Message = "Data ditampilkan" });
+                return Ok(result);
             }
-            return NotFound(new { status = HttpStatusCode.NotFound, Message = "Data belum tersedia" });
+            return NotFound(result);
         }
 
         [HttpGet("TestCORS")]
